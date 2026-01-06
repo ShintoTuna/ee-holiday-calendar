@@ -1,6 +1,6 @@
 # Estonian Holidays Calendar 🇪🇪
 
-Automatically generated ICS calendar file containing Estonian public holidays and shortened work days. Perfect for adding to your personal calendar app!
+Automatically generated ICS calendar file containing Estonian public holidays and shortened work days. Calculated locally using government-defined rules - no external dependencies! Perfect for adding to your personal calendar app.
 
 ## 📅 What's Included
 
@@ -79,9 +79,10 @@ npm run generate
 ```
 
 This will:
-1. Fetch the latest holidays from [riigipühad.ee](https://xn--riigiphad-v9a.ee/)
-2. Filter out National Memorable Days (type 3)
-3. Generate an ICS file at `docs/estonian-holidays.ics`
+1. Calculate Estonian holidays using local algorithms based on government rules
+2. Generate holidays for current year ±6 years (7 years total)
+3. Include public holidays and shortened work days (excludes National Memorable Days)
+4. Create an ICS file at `docs/estonian-holidays.ics`
 
 ### Project Structure
 
@@ -107,15 +108,36 @@ The calendar is automatically updated every week using GitHub Actions:
 - **Manual Trigger**: Can be triggered manually from the Actions tab
 - **Auto-commit**: Automatically commits and pushes changes if the calendar is updated
 
-## 📊 Data Source
+## 🧮 How It Works
 
-Holiday data is sourced from the official Estonian government website:
-- [riigipühad.ee](https://xn--riigiphad-v9a.ee/)
-- API endpoint: `https://xn--riigiphad-v9a.ee/?output=json`
+This calendar uses **local calculation algorithms** based on Estonian government holiday rules - no external API calls required!
+
+### Fixed Holidays
+- **New Year's Day** - January 1
+- **Independence Day** - February 24
+- **Spring Day** - May 1
+- **Victory Day** - June 23
+- **St. John's Day** - June 24
+- **Restoration of Independence Day** - August 20
+- **Christmas Eve** - December 24
+- **Christmas Day** - December 25
+- **Boxing Day** - December 26
+
+### Movable Holidays (Based on Easter)
+Easter is calculated using the **Anonymous Gregorian Computus algorithm**:
+- **Good Friday** - 2 days before Easter
+- **Easter Sunday** - Calculated using Computus
+- **Pentecost** - 49 days after Easter
+
+### Shortened Work Days
+- **February 23** - Day before Independence Day
+- **June 22** - Day before Victory Day
+- **December 23** - Day before Christmas Eve
+- **December 31** - New Year's Eve
 
 ## 📝 Holiday Types
 
-The API provides different types of days:
+This calendar includes official Estonian holiday types:
 
 | Type | Estonian | English | Included |
 |------|----------|---------|----------|
@@ -150,5 +172,7 @@ MIT License - feel free to use this project for any purpose.
 
 ## 🙏 Acknowledgments
 
-- Holiday data provided by [riigipühad.ee](https://xn--riigiphad-v9a.ee/)
+- Holiday rules based on official Estonian government legislation
+- Easter calculation using the Anonymous Gregorian Computus algorithm
 - Built with [ics](https://www.npmjs.com/package/ics) library
+- Reference data validation from [riigipühad.ee](https://xn--riigiphad-v9a.ee/)
