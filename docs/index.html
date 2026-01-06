@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estonian Holidays Calendar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .flag {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .calendar-link {
+            background: #667eea;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 20px 0;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .calendar-link:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .info-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .info-box h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin-left: 20px;
+            color: #555;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flag">🇪🇪</div>
+        <h1>Estonian Holidays</h1>
+        <p>A calendar subscription for Estonian public holidays and shortened work days.</p>
+
+        <a href="estonian-holidays.ics" class="calendar-link" download>📥 Download Calendar</a>
+
+        <div class="info-box">
+            <h3>📅 What's included?</h3>
+            <ul>
+                <li>🎉 <strong>Public holidays</strong> (Riigipüha & Rahvuspüha) - official days off</li>
+                <li>⏰ <strong>Shortened work days</strong> (Lühendatud tööpäev) - days when workday ends earlier</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>🔗 How to subscribe?</h3>
+            <p><strong>Option 1: Direct download</strong></p>
+            <p>Click the download button above and import the <code>.ics</code> file into your calendar app.</p>
+
+            <p style="margin-top: 15px;"><strong>Option 2: Subscribe (auto-updates)</strong></p>
+            <p>Use this URL in your calendar app to get automatic updates:</p>
+            <code id="calendar-url" style="display: block; margin-top: 10px; padding: 10px; word-break: break-all;">
+                https://[your-username].github.io/ee-holiday-calendar/estonian-holidays.ics
+            </code>
+        </div>
+
+        <div class="info-box">
+            <h3>📱 How to add to your calendar?</h3>
+            <ul>
+                <li><strong>Apple Calendar:</strong> File → New Calendar Subscription → Paste URL</li>
+                <li><strong>Google Calendar:</strong> Settings → Add calendar → From URL → Paste URL</li>
+                <li><strong>Outlook:</strong> Calendar → Add calendar → Subscribe from web → Paste URL</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>📊 Data source: <a href="https://xn--riigiphad-v9a.ee/" target="_blank">riigipühad.ee</a></p>
+            <p>🔄 Updated weekly via GitHub Actions</p>
+        </div>
+    </div>
+
+    <script>
+        // Auto-fill the calendar URL
+        const urlElement = document.getElementById('calendar-url');
+        const currentUrl = window.location.href.replace('index.html', '');
+        urlElement.textContent = currentUrl + 'estonian-holidays.ics';
+    </script>
+</body>
+</html>

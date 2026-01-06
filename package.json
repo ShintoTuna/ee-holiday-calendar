@@ -1,0 +1,23 @@
+{
+  "name": "estonian-holidays-calendar",
+  "version": "1.0.0",
+  "description": "Generates an ICS calendar for Estonian holidays and shortened work days",
+  "main": "src/generate-calendar.js",
+  "type": "module",
+  "scripts": {
+    "generate": "node src/generate-calendar.js",
+    "test": "node src/generate-calendar.js"
+  },
+  "keywords": [
+    "estonian",
+    "holidays",
+    "calendar",
+    "ics"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ics": "^3.7.2",
+    "node-fetch": "^3.3.2"
+  }
+}
