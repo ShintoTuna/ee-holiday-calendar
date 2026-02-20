@@ -1,9 +1,63 @@
 <!DOCTYPE html>
-<html lang="et">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estonian Holidays Calendar</title>
+    <title>Estonian Holidays Calendar | ICS Subscribe &amp; Download</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Free Estonian public holidays calendar. Download or subscribe to the ICS file for all Estonian national holidays and shortened work days. Auto-updates weekly. Compatible with Google Calendar, Apple Calendar, and Outlook.">
+    <meta name="keywords" content="Estonian holidays, Estonia public holidays, ICS calendar, estonian national holidays, eesti riigipühad, calendar subscription, ical, estonian calendar 2025, estonian calendar 2026, estonian holidays download">
+    <meta name="author" content="ShintoTuna">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL (set dynamically below) -->
+    <link rel="canonical" id="canonical-url" href="https://shintotuna.github.io/ee-holiday-calendar/">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📅</text></svg>">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" id="og-url" content="https://shintotuna.github.io/ee-holiday-calendar/">
+    <meta property="og:title" content="Estonian Holidays Calendar">
+    <meta property="og:description" content="Free Estonian public holidays calendar. Download or subscribe for all Estonian national holidays and shortened work days. Auto-updates weekly.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Estonian Holidays Calendar">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Estonian Holidays Calendar">
+    <meta name="twitter:description" content="Free Estonian public holidays calendar. Download or subscribe for all Estonian national holidays and shortened work days. Auto-updates weekly.">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Estonian Holidays Calendar",
+      "description": "Free Estonian public holidays calendar. Download or subscribe to the ICS file for all Estonian national holidays and shortened work days. Auto-updates weekly via GitHub Actions.",
+      "url": "https://shintotuna.github.io/ee-holiday-calendar/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "featureList": [
+        "Estonian public holidays (Riigipüha & Rahvuspüha)",
+        "Shortened work days (Lühendatud tööpäev)",
+        "ICS calendar format",
+        "Auto-updating weekly subscription",
+        "Compatible with Google Calendar, Apple Calendar, Outlook"
+      ],
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "downloadUrl": "https://shintotuna.github.io/ee-holiday-calendar/estonian-holidays.ics"
+    }
+    </script>
+
     <style>
         * {
             margin: 0;
@@ -74,9 +128,10 @@
             border-radius: 5px;
         }
 
-        .info-box h3 {
+        .info-box h2 {
             color: #667eea;
             margin-bottom: 10px;
+            font-size: 1.1em;
         }
 
         ul {
@@ -106,34 +161,34 @@
 </head>
 <body>
     <div class="container">
-        <div class="flag">🇪🇪</div>
+        <div class="flag" aria-label="Estonian flag">🇪🇪</div>
         <h1>Estonian Holidays</h1>
         <p>A calendar subscription for Estonian public holidays and shortened work days. Calculated locally using official government rules - no external dependencies!</p>
 
         <a href="estonian-holidays.ics" class="calendar-link" download>📥 Download Calendar</a>
 
         <div class="info-box">
-            <h3>📅 What's included?</h3>
+            <h2>📅 What's included?</h2>
             <ul>
-                <li>🎉 <strong>Public holidays</strong> (Riigipüha & Rahvuspüha) - official days off</li>
+                <li>🎉 <strong>Public holidays</strong> (Riigipüha &amp; Rahvuspüha) - official days off</li>
                 <li>⏰ <strong>Shortened work days</strong> (Lühendatud tööpäev) - days when workday ends earlier</li>
             </ul>
         </div>
 
         <div class="info-box">
-            <h3>🔗 How to subscribe?</h3>
+            <h2>🔗 How to subscribe?</h2>
             <p><strong>Option 1: Direct download</strong></p>
             <p>Click the download button above and import the <code>.ics</code> file into your calendar app.</p>
 
             <p style="margin-top: 15px;"><strong>Option 2: Subscribe (auto-updates)</strong></p>
             <p>Use this URL in your calendar app to get automatic updates:</p>
             <code id="calendar-url" style="display: block; margin-top: 10px; padding: 10px; word-break: break-all;">
-                https://[your-username].github.io/ee-holiday-calendar/estonian-holidays.ics
+                https://shintotuna.github.io/ee-holiday-calendar/estonian-holidays.ics
             </code>
         </div>
 
         <div class="info-box">
-            <h3>📱 How to add to your calendar?</h3>
+            <h2>📱 How to add to your calendar?</h2>
             <ul>
                 <li><strong>Apple Calendar:</strong> File → New Calendar Subscription → Paste URL</li>
                 <li><strong>Google Calendar:</strong> Settings → Add calendar → From URL → Paste URL</li>
@@ -152,7 +207,13 @@
         // Auto-fill the calendar URL
         const urlElement = document.getElementById('calendar-url');
         const currentUrl = window.location.href.replace('index.html', '');
-        urlElement.textContent = currentUrl + 'estonian-holidays.ics';
+        const calendarUrl = currentUrl + 'estonian-holidays.ics';
+        urlElement.textContent = calendarUrl;
+
+        // Update canonical and OG URL dynamically
+        const pageUrl = currentUrl.endsWith('/') ? currentUrl : currentUrl + '/';
+        document.getElementById('canonical-url').setAttribute('href', pageUrl);
+        document.getElementById('og-url').setAttribute('content', pageUrl);
     </script>
 </body>
 </html>

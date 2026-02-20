@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shintotuna.github.io/ee-holiday-calendar/sitemap.xml
