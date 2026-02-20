@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eesti Riigipühad Kalender | Laadi alla või telli</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Tasuta Eesti riigipühade kalender. Laadi alla või telli ICS-kalender kõigi Eesti riiklike pühade ja lühendatud tööpäevadega. Uuendatakse automaatselt iganädalaselt. Sobib Google Calendari, Apple Calendari ja Outlookiga.">
+    <meta name="keywords" content="eesti riigipühad, eesti rahvuspühad, riigipühade kalender, ICS kalender, eesti pühad 2025, eesti pühad 2026, lühendatud tööpäev, eesti kalendritellimus">
+    <meta name="author" content="ShintoTuna">
+    <meta name="robots" content="index, follow">
+
+    <!-- Hreflang for multilingual SEO -->
+    <link rel="alternate" hreflang="en" href="https://shintotuna.github.io/ee-holiday-calendar/">
+    <link rel="alternate" hreflang="et" href="https://shintotuna.github.io/ee-holiday-calendar/et/">
+    <link rel="alternate" hreflang="ru" href="https://shintotuna.github.io/ee-holiday-calendar/ru/">
+    <link rel="alternate" hreflang="x-default" href="https://shintotuna.github.io/ee-holiday-calendar/">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://shintotuna.github.io/ee-holiday-calendar/et/">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📅</text></svg>">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shintotuna.github.io/ee-holiday-calendar/et/">
+    <meta property="og:title" content="Eesti Riigipühad Kalender">
+    <meta property="og:description" content="Tasuta Eesti riigipühade kalender. Laadi alla või telli kõigi Eesti riiklike pühade ja lühendatud tööpäevadega ICS-kalender. Uuendatakse iganädalaselt.">
+    <meta property="og:locale" content="et_EE">
+    <meta property="og:site_name" content="Eesti Riigipühad Kalender">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Eesti Riigipühad Kalender">
+    <meta name="twitter:description" content="Tasuta Eesti riigipühade kalender. Laadi alla või telli. Uuendatakse iganädalaselt.">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Eesti Riigipühad Kalender",
+      "description": "Tasuta Eesti riigipühade kalender kõigi riiklike pühade ja lühendatud tööpäevadega. Laadi alla või telli automaatseid iganädalaseid uuendusi.",
+      "url": "https://shintotuna.github.io/ee-holiday-calendar/et/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "et",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+      "downloadUrl": "https://shintotuna.github.io/ee-holiday-calendar/estonian-holidays.ics"
+    }
+    </script>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <main class="card">
+        <header class="site-header">
+            <span class="flag" aria-label="Eesti lipp">🇪🇪</span>
+            <h1>Eesti Riigipühad</h1>
+            <p class="subtitle">Riigipühad ja lühendatud tööpäevad Eestis</p>
+        </header>
+
+        <section class="paths" aria-label="Kalendri hankimise viisid">
+            <div class="path-card">
+                <h2>📥 Laadi alla</h2>
+                <p class="tagline">Ühekordne import. Kontot ei vaja.</p>
+                <ol class="steps">
+                    <li>Laadi alla .ics fail</li>
+                    <li>Ava oma kalenderrakendus</li>
+                    <li>Impordi fail (Fail → Impordi)</li>
+                </ol>
+                <a href="../estonian-holidays.ics" class="btn btn-primary" download>Laadi alla .ics fail</a>
+            </div>
+
+            <div class="divider" aria-hidden="true">või</div>
+
+            <div class="path-card">
+                <h2>🔗 Telli</h2>
+                <p class="tagline">Alati ajakohane. Sünkroonib automaatselt.</p>
+                <ol class="steps">
+                    <li>Kopeeri allolev kalendri URL</li>
+                    <li>Ava kalenderrakenduse seaded</li>
+                    <li>Lisa kalender URL-i kaudu</li>
+                </ol>
+                <div class="url-box">
+                    <code class="url-code" id="calendar-url">laadin...</code>
+                    <button class="btn-copy" id="copy-btn" onclick="copyUrl()">Kopeeri</button>
+                </div>
+                <p class="calendar-apps">
+                    <strong>Apple Calendar:</strong> Fail → Uus kalendritellimus<br>
+                    <strong>Google Calendar:</strong> Seaded → Lisa kalender → URL-ilt<br>
+                    <strong>Outlook:</strong> Lisa kalender → Telli veebist
+                </p>
+            </div>
+        </section>
+
+        <section class="included">
+            <h2>Mida on kaasas</h2>
+            <ul>
+                <li><span>🎉</span> <span><strong>Riigipühad</strong> (Riigipüha &amp; Rahvuspüha) — ametlikud puhkepäevad</span></li>
+                <li><span>⏰</span> <span><strong>Lühendatud tööpäevad</strong> — päevad, mil töö lõpeb varem</span></li>
+            </ul>
+        </section>
+
+        <footer class="site-footer">
+            <span>Uuendatakse iganädalaselt GitHub Actionsi kaudu</span>
+            <nav class="lang-switcher" aria-label="Keel">
+                <a href="../" hreflang="en">EN</a>
+                <a href="./" class="active" hreflang="et">ET</a>
+                <a href="../ru/" hreflang="ru">RU</a>
+            </nav>
+        </footer>
+    </main>
+
+    <script>
+        const copiedText = 'Kopeeritud!';
+
+        function getBaseUrl() {
+            const path = window.location.pathname
+                .replace(/\/(et|ru)\/(index\.html)?$/, '/')
+                .replace(/\/index\.html$/, '/');
+            return window.location.origin + path;
+        }
+
+        const calendarUrl = getBaseUrl() + 'estonian-holidays.ics';
+        document.getElementById('calendar-url').textContent = calendarUrl;
+
+        function copyUrl() {
+            const btn = document.getElementById('copy-btn');
+            const originalText = btn.textContent;
+
+            function showCopied() {
+                btn.textContent = copiedText;
+                btn.classList.add('copied');
+                setTimeout(() => { btn.textContent = originalText; btn.classList.remove('copied'); }, 2000);
+            }
+
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(calendarUrl).then(showCopied);
+            } else {
+                const el = document.createElement('textarea');
+                el.value = calendarUrl;
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
+                showCopied();
+            }
+        }
+    </script>
+</body>
+</html>

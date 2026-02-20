@@ -1,158 +1,155 @@
 <!DOCTYPE html>
-<html lang="et">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estonian Holidays Calendar</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <title>Estonian Holidays Calendar | Download or Subscribe</title>
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Free Estonian public holidays calendar. Download or subscribe to the ICS file for all Estonian national holidays and shortened work days. Auto-updates weekly. Works with Google Calendar, Apple Calendar, and Outlook.">
+    <meta name="keywords" content="Estonian holidays, Estonia public holidays, ICS calendar, Estonian national holidays, eesti riigipühad, calendar subscription, ical, Estonian calendar 2025, Estonian calendar 2026">
+    <meta name="author" content="ShintoTuna">
+    <meta name="robots" content="index, follow">
 
-        .container {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 600px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
+    <!-- Hreflang for multilingual SEO -->
+    <link rel="alternate" hreflang="en" href="https://shintotuna.github.io/ee-holiday-calendar/">
+    <link rel="alternate" hreflang="et" href="https://shintotuna.github.io/ee-holiday-calendar/et/">
+    <link rel="alternate" hreflang="ru" href="https://shintotuna.github.io/ee-holiday-calendar/ru/">
+    <link rel="alternate" hreflang="x-default" href="https://shintotuna.github.io/ee-holiday-calendar/">
 
-        h1 {
-            color: #667eea;
-            margin-bottom: 20px;
-            font-size: 2.5em;
-        }
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://shintotuna.github.io/ee-holiday-calendar/">
 
-        .flag {
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📅</text></svg>">
 
-        p {
-            margin-bottom: 15px;
-            color: #555;
-        }
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shintotuna.github.io/ee-holiday-calendar/">
+    <meta property="og:title" content="Estonian Holidays Calendar">
+    <meta property="og:description" content="Free Estonian public holidays calendar. Download or subscribe to get all Estonian national holidays and shortened work days in your calendar. Auto-updates weekly.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Estonian Holidays Calendar">
 
-        .calendar-link {
-            background: #667eea;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 10px;
-            display: inline-block;
-            margin: 20px 0;
-            font-weight: bold;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Estonian Holidays Calendar">
+    <meta name="twitter:description" content="Free Estonian public holidays calendar. Download or subscribe. Auto-updates weekly.">
 
-        .calendar-link:hover {
-            background: #5568d3;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-        }
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Estonian Holidays Calendar",
+      "description": "Free Estonian public holidays calendar with all national holidays and shortened work days. Download or subscribe for automatic weekly updates.",
+      "url": "https://shintotuna.github.io/ee-holiday-calendar/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+      "downloadUrl": "https://shintotuna.github.io/ee-holiday-calendar/estonian-holidays.ics"
+    }
+    </script>
 
-        .info-box {
-            background: #f8f9fa;
-            border-left: 4px solid #667eea;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 5px;
-        }
-
-        .info-box h3 {
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-
-        ul {
-            margin-left: 20px;
-            color: #555;
-        }
-
-        ul li {
-            margin-bottom: 8px;
-        }
-
-        .footer {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            color: #888;
-            font-size: 0.9em;
-        }
-
-        code {
-            background: #f4f4f4;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: 'Courier New', monospace;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="flag">🇪🇪</div>
-        <h1>Estonian Holidays</h1>
-        <p>A calendar subscription for Estonian public holidays and shortened work days. Calculated locally using official government rules - no external dependencies!</p>
+    <main class="card">
+        <header class="site-header">
+            <span class="flag" aria-label="Estonian flag">🇪🇪</span>
+            <h1>Estonian Holidays</h1>
+            <p class="subtitle">Public holidays and shortened work days in Estonia</p>
+        </header>
 
-        <a href="estonian-holidays.ics" class="calendar-link" download>📥 Download Calendar</a>
+        <section class="paths" aria-label="Ways to get the calendar">
+            <div class="path-card">
+                <h2>📥 Download</h2>
+                <p class="tagline">One-time import. No account needed.</p>
+                <ol class="steps">
+                    <li>Download the .ics file below</li>
+                    <li>Open your calendar app</li>
+                    <li>Import the file (File → Import)</li>
+                </ol>
+                <a href="estonian-holidays.ics" class="btn btn-primary" download>Download .ics file</a>
+            </div>
 
-        <div class="info-box">
-            <h3>📅 What's included?</h3>
+            <div class="divider" aria-hidden="true">or</div>
+
+            <div class="path-card">
+                <h2>🔗 Subscribe</h2>
+                <p class="tagline">Always up-to-date. Syncs automatically.</p>
+                <ol class="steps">
+                    <li>Copy the calendar URL below</li>
+                    <li>Open your calendar app settings</li>
+                    <li>Add calendar from URL</li>
+                </ol>
+                <div class="url-box">
+                    <code class="url-code" id="calendar-url">loading...</code>
+                    <button class="btn-copy" id="copy-btn" onclick="copyUrl()">Copy</button>
+                </div>
+                <p class="calendar-apps">
+                    <strong>Apple Calendar:</strong> File → New Calendar Subscription<br>
+                    <strong>Google Calendar:</strong> Settings → Add calendar → From URL<br>
+                    <strong>Outlook:</strong> Add calendar → Subscribe from web
+                </p>
+            </div>
+        </section>
+
+        <section class="included">
+            <h2>What's included</h2>
             <ul>
-                <li>🎉 <strong>Public holidays</strong> (Riigipüha & Rahvuspüha) - official days off</li>
-                <li>⏰ <strong>Shortened work days</strong> (Lühendatud tööpäev) - days when workday ends earlier</li>
+                <li><span>🎉</span> <span><strong>Public holidays</strong> (Riigipüha &amp; Rahvuspüha) — official days off</span></li>
+                <li><span>⏰</span> <span><strong>Shortened work days</strong> (Lühendatud tööpäev) — days when work ends earlier</span></li>
             </ul>
-        </div>
+        </section>
 
-        <div class="info-box">
-            <h3>🔗 How to subscribe?</h3>
-            <p><strong>Option 1: Direct download</strong></p>
-            <p>Click the download button above and import the <code>.ics</code> file into your calendar app.</p>
-
-            <p style="margin-top: 15px;"><strong>Option 2: Subscribe (auto-updates)</strong></p>
-            <p>Use this URL in your calendar app to get automatic updates:</p>
-            <code id="calendar-url" style="display: block; margin-top: 10px; padding: 10px; word-break: break-all;">
-                https://[your-username].github.io/ee-holiday-calendar/estonian-holidays.ics
-            </code>
-        </div>
-
-        <div class="info-box">
-            <h3>📱 How to add to your calendar?</h3>
-            <ul>
-                <li><strong>Apple Calendar:</strong> File → New Calendar Subscription → Paste URL</li>
-                <li><strong>Google Calendar:</strong> Settings → Add calendar → From URL → Paste URL</li>
-                <li><strong>Outlook:</strong> Calendar → Add calendar → Subscribe from web → Paste URL</li>
-            </ul>
-        </div>
-
-        <div class="footer">
-            <p>🧮 Calculated locally using Estonian government holiday rules</p>
-            <p>📅 Easter dates calculated using Gregorian Computus algorithm</p>
-            <p>🔄 Updated weekly via GitHub Actions</p>
-        </div>
-    </div>
+        <footer class="site-footer">
+            <span>Updated weekly via GitHub Actions</span>
+            <nav class="lang-switcher" aria-label="Language">
+                <a href="./" class="active" hreflang="en">EN</a>
+                <a href="et/" hreflang="et">ET</a>
+                <a href="ru/" hreflang="ru">RU</a>
+            </nav>
+        </footer>
+    </main>
 
     <script>
-        // Auto-fill the calendar URL
-        const urlElement = document.getElementById('calendar-url');
-        const currentUrl = window.location.href.replace('index.html', '');
-        urlElement.textContent = currentUrl + 'estonian-holidays.ics';
+        const copiedText = 'Copied!';
+
+        function getBaseUrl() {
+            const path = window.location.pathname
+                .replace(/\/(et|ru)\/(index\.html)?$/, '/')
+                .replace(/\/index\.html$/, '/');
+            return window.location.origin + path;
+        }
+
+        const calendarUrl = getBaseUrl() + 'estonian-holidays.ics';
+        document.getElementById('calendar-url').textContent = calendarUrl;
+
+        function copyUrl() {
+            const btn = document.getElementById('copy-btn');
+            const originalText = btn.textContent;
+
+            function showCopied() {
+                btn.textContent = copiedText;
+                btn.classList.add('copied');
+                setTimeout(() => { btn.textContent = originalText; btn.classList.remove('copied'); }, 2000);
+            }
+
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(calendarUrl).then(showCopied);
+            } else {
+                const el = document.createElement('textarea');
+                el.value = calendarUrl;
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
+                showCopied();
+            }
+        }
     </script>
 </body>
 </html>

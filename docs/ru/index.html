@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Праздники Эстонии — Календарь | Скачать или подписаться</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Бесплатный календарь эстонских государственных праздников. Скачайте ICS-файл или подпишитесь на автообновляемый календарь с праздниками и сокращёнными рабочими днями Эстонии. Обновляется еженедельно. Совместим с Google Calendar, Apple Calendar и Outlook.">
+    <meta name="keywords" content="эстонские праздники, государственные праздники Эстонии, календарь праздников Эстонии, ICS календарь, праздники Эстонии 2025, праздники Эстонии 2026, сокращённые рабочие дни, подписка на календарь">
+    <meta name="author" content="ShintoTuna">
+    <meta name="robots" content="index, follow">
+
+    <!-- Hreflang for multilingual SEO -->
+    <link rel="alternate" hreflang="en" href="https://shintotuna.github.io/ee-holiday-calendar/">
+    <link rel="alternate" hreflang="et" href="https://shintotuna.github.io/ee-holiday-calendar/et/">
+    <link rel="alternate" hreflang="ru" href="https://shintotuna.github.io/ee-holiday-calendar/ru/">
+    <link rel="alternate" hreflang="x-default" href="https://shintotuna.github.io/ee-holiday-calendar/">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://shintotuna.github.io/ee-holiday-calendar/ru/">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📅</text></svg>">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shintotuna.github.io/ee-holiday-calendar/ru/">
+    <meta property="og:title" content="Праздники Эстонии — Календарь">
+    <meta property="og:description" content="Бесплатный календарь эстонских государственных праздников. Скачайте или подпишитесь — все праздники и сокращённые рабочие дни Эстонии. Обновляется еженедельно.">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="Праздники Эстонии — Календарь">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Праздники Эстонии — Календарь">
+    <meta name="twitter:description" content="Бесплатный календарь эстонских праздников. Скачать или подписаться. Обновляется еженедельно.">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Праздники Эстонии — Календарь",
+      "description": "Бесплатный календарь эстонских государственных праздников со всеми национальными праздниками и сокращёнными рабочими днями. Скачайте или подпишитесь на автоматические еженедельные обновления.",
+      "url": "https://shintotuna.github.io/ee-holiday-calendar/ru/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "ru",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+      "downloadUrl": "https://shintotuna.github.io/ee-holiday-calendar/estonian-holidays.ics"
+    }
+    </script>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <main class="card">
+        <header class="site-header">
+            <span class="flag" aria-label="Флаг Эстонии">🇪🇪</span>
+            <h1>Праздники Эстонии</h1>
+            <p class="subtitle">Государственные праздники и сокращённые рабочие дни в Эстонии</p>
+        </header>
+
+        <section class="paths" aria-label="Способы получить календарь">
+            <div class="path-card">
+                <h2>📥 Скачать</h2>
+                <p class="tagline">Единовременный импорт. Регистрация не нужна.</p>
+                <ol class="steps">
+                    <li>Скачайте .ics файл ниже</li>
+                    <li>Откройте приложение календаря</li>
+                    <li>Импортируйте файл (Файл → Импорт)</li>
+                </ol>
+                <a href="../estonian-holidays.ics" class="btn btn-primary" download>Скачать .ics файл</a>
+            </div>
+
+            <div class="divider" aria-hidden="true">или</div>
+
+            <div class="path-card">
+                <h2>🔗 Подписаться</h2>
+                <p class="tagline">Всегда актуально. Синхронизируется автоматически.</p>
+                <ol class="steps">
+                    <li>Скопируйте URL календаря ниже</li>
+                    <li>Откройте настройки приложения</li>
+                    <li>Добавьте календарь по URL</li>
+                </ol>
+                <div class="url-box">
+                    <code class="url-code" id="calendar-url">загрузка...</code>
+                    <button class="btn-copy" id="copy-btn" onclick="copyUrl()">Копировать</button>
+                </div>
+                <p class="calendar-apps">
+                    <strong>Apple Calendar:</strong> Файл → Новая подписка на календарь<br>
+                    <strong>Google Calendar:</strong> Настройки → Добавить → По URL<br>
+                    <strong>Outlook:</strong> Добавить календарь → Подписаться из интернета
+                </p>
+            </div>
+        </section>
+
+        <section class="included">
+            <h2>Что включено</h2>
+            <ul>
+                <li><span>🎉</span> <span><strong>Государственные праздники</strong> (Riigipüha &amp; Rahvuspüha) — официальные выходные</span></li>
+                <li><span>⏰</span> <span><strong>Сокращённые рабочие дни</strong> (Lühendatud tööpäev) — дни с коротким рабочим днём</span></li>
+            </ul>
+        </section>
+
+        <footer class="site-footer">
+            <span>Обновляется еженедельно через GitHub Actions</span>
+            <nav class="lang-switcher" aria-label="Язык">
+                <a href="../" hreflang="en">EN</a>
+                <a href="../et/" hreflang="et">ET</a>
+                <a href="./" class="active" hreflang="ru">RU</a>
+            </nav>
+        </footer>
+    </main>
+
+    <script>
+        const copiedText = 'Скопировано!';
+
+        function getBaseUrl() {
+            const path = window.location.pathname
+                .replace(/\/(et|ru)\/(index\.html)?$/, '/')
+                .replace(/\/index\.html$/, '/');
+            return window.location.origin + path;
+        }
+
+        const calendarUrl = getBaseUrl() + 'estonian-holidays.ics';
+        document.getElementById('calendar-url').textContent = calendarUrl;
+
+        function copyUrl() {
+            const btn = document.getElementById('copy-btn');
+            const originalText = btn.textContent;
+
+            function showCopied() {
+                btn.textContent = copiedText;
+                btn.classList.add('copied');
+                setTimeout(() => { btn.textContent = originalText; btn.classList.remove('copied'); }, 2000);
+            }
+
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(calendarUrl).then(showCopied);
+            } else {
+                const el = document.createElement('textarea');
+                el.value = calendarUrl;
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
+                showCopied();
+            }
+        }
+    </script>
+</body>
+</html>
